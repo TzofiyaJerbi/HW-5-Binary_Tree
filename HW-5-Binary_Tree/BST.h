@@ -14,5 +14,5 @@ typedef struct BST
 {
     TreeNode* root;
 }BST;
-
+void initBST(BST* bst);
 #endif // !_BST_ADT_H
