@@ -1,4 +1,4 @@
-#ifndef _BST_ADT_H
+﻿#ifndef _BST_ADT_H
 #define _BST_ADT_H
 
 typedef struct TreeNode TreeNode;
@@ -14,5 +14,7 @@ typedef struct BST
 {
     TreeNode* root;
 }BST;
-void initBST(BST* bst);
+
+void initBST(BST* bst);//מאפסת את העץ
+void insertBST(BST* bst, int value);
 #endif // !_BST_ADT_H
