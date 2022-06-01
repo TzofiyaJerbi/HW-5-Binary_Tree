@@ -2,26 +2,36 @@
 #include"BST.h"
 #include"reePrintLibrary.h"
 #include <assert.h>
+#include <stdlib.h>
 void initBST(BST* bst)
 {
-	bst->root = (TreeNode*)malloc(sizeof(TreeNode));//מבצע הקצאה לתחילת מצביע של עץ מנהל
-	assert(bst->root);
-	bst->root->left = NULL;
-	bst->root->right = NULL;
+	bst->root= NULL;
+}
+TreeNode* createNode()
+{
+	
+	TreeNode* tree = (TreeNode*)malloc(sizeof(TreeNode));
+	tree->left = NULL;
+	tree->right = NULL;
+	return tree;
+}
+void insert(TreeNode* root, TreeNode* newNode)
+{
+	if (newNode->element <= root->element)
+		if (root->element == NULL)
+			root->element = newNode;
+		else
+			insert(root->element, newNode);
 
+	if (newNode->element > root->element) //right subtree (>)
+		if (root->right == NULL)
+			root->right = newNode;
+		else
+			insert(root->right, newNode);
 }
 
 void insertBST(BST* bst, int value)// נדרש לבדוק האם עובד
 {
-	if (bst->root->element <= value)
-		if (bst->root->left == NULL)
-			bst->root->left = bst->root;
-		else
-			insertBST(bst->root->left, value);
-	if (bst->root->element > value)
-		if (bst->root->right == NULL)
-			bst->root->right = bst->root;
-		else
-			insertBST(bst->root->right, value);
+
 
 }
