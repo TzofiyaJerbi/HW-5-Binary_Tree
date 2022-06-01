@@ -3,35 +3,62 @@
 #include"reePrintLibrary.h"
 #include <assert.h>
 #include <stdlib.h>
+//#define CHECK_NULL(x)	if ((x) == NULL) }printf("Allocation Fail\n")// exit(1)}
 void initBST(BST* bst)
 {
 	bst->root= NULL;
 }
+
 TreeNode* createNode()
 {
-	
+
 	TreeNode* tree = (TreeNode*)malloc(sizeof(TreeNode));
+	if (tree == NULL)exit(1);
 	tree->left = NULL;
 	tree->right = NULL;
 	return tree;
 }
-void insert(TreeNode* root, TreeNode* newNode)
+TreeNode* insert(TreeNode* root, TreeNode* newNode)
 {
-	if (newNode->element <= root->element)
-		if (root->element == NULL)
-			root->element = newNode;
-		else
-			insert(root->element, newNode);
+	
+	if (root == NULL)
+		root = newNode;
 
-	if (newNode->element > root->element) //right subtree (>)
-		if (root->right == NULL)
-			root->right = newNode;
+	if (newNode->element <= root->element)
+	{
+
+
+		if (root->left == NULL)//?
+		{
+			root->left = newNode;
+			return newNode;
+		}
+			
+		
+			
+
 		else
-			insert(root->right, newNode);
+			insert(root->left, newNode);
+	}
+	else
+	{
+
+
+		//if (newNode->element > root->element) //right subtree (>)
+		if (root->right == NULL)
+		{
+			root->right = newNode;
+			return newNode;
+		}	
+			else
+				insert(root->right, newNode);
+	}
 }
 
 void insertBST(BST* bst, int value)// נדרש לבדוק האם עובד
 {
-
+	TreeNode* leev=createNode();
+	leev->element = value;
+	insert(bst->root, leev);
 
 }
