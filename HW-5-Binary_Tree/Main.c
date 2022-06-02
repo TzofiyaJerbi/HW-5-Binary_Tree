@@ -11,13 +11,16 @@ void main()
 	
 	BST NewTree;
 	initBST(&NewTree);
-
-	while (1)
+	int x = 3;
+	while (x)
 	{
 
 		printf("Enter a Value for the tree \n");
 		scanf("%d", &v);
 		insertBST(&NewTree, v);
+		x--;
 	}
-
+	printTreeInorder(&NewTree);
+	destroyBST(&NewTree);
+	int f = 4;
 }

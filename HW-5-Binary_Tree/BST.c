@@ -30,12 +30,7 @@ TreeNode* createNode()
 TreeNode* insert(TreeNode* root, TreeNode* newNode) //נותן לי כתובת מה צריך לשבת העלה החדש, מקבל עץ ועלה לחיפוש מקומו
 {
 
-	//TreeNode* headt = root;// יכול להיות מחוץ לפונקציה
-	//if (root == NULL)
-	//{
-	//	//root = newNode;
-	//	return &root;
-	/*}*/
+	
 
 	if (newNode->element <= root->element)
 		if (root->left == NULL)//?
@@ -72,9 +67,58 @@ void insertBST(BST* bst, int value)// נדרש לבדוק האם עובד
 	else
 	{
 	TreeNode* when = insert(headt->root, leev); //לאן
-	//when->left = leev;
 	}
 	
+}
+
+void printTreeInorder(BST* bst)
+{
+	if ((bst->root) != NULL)
+	
+		INprintTreeInorder(bst->root);
+	else
+	{
+		printf("no tree (empti)");
+	}
+
+}
+
+void INprintTreeInorder(TreeNode* ToPrint)
+{
+	if ((ToPrint) != NULL)
+	{
+		INprintTreeInorder(ToPrint->left);
+		printf("%d,", ToPrint->element);
+		INprintTreeInorder(ToPrint->right);
+	}
+}
+
+void destroyBST(BST* bst)
+{
+	if ((bst->root) != NULL)
+
+		INdestroyBST(bst->root);
+	else
+	{
+
+		printf("no tree (empti)"); 
+	}
 
 
+}
+void INdestroyBST(TreeNode* ToFree)
+{
+	if ((ToFree->left) != NULL)
+
+		INdestroyBST(ToFree->left);
+
+	else if((ToFree->right) != NULL)
+	{
+		INdestroyBST(ToFree->right);
+	}
+	else
+	{
+		return;
+	}
+	free(ToFree);
 }
