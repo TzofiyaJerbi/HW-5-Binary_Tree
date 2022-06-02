@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -141,18 +141,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BST.h" />
-    <ClInclude Include="reePrintLibrary.h" />
+    <ClInclude Include="TreePrintLibrary.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BST.c" />
     <ClCompile Include="Main.c" />
-    <ClCompile Include="reePrintLibrary.c" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\לימודים\הנדסת חשמל\שנה ב\סמסטר ב\נושאים מתקדמים בשפת C\HW5-binary tree\TreePrint.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="D:\לימודים\הנדסת חשמל\שנה ב\סמסטר ב\נושאים מתקדמים בשפת C\HW5-binary tree\TreePrint.lib" />
+    <Library Include="TreePrint.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

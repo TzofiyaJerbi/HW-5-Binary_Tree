@@ -18,7 +18,7 @@
     <ClInclude Include="BST.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="reePrintLibrary.h">
+    <ClInclude Include="TreePrintLibrary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -26,17 +26,13 @@
     <ClCompile Include="BST.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="reePrintLibrary.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\לימודים\הנדסת חשמל\שנה ב\סמסטר ב\נושאים מתקדמים בשפת C\HW5-binary tree\TreePrint.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="D:\לימודים\הנדסת חשמל\שנה ב\סמסטר ב\נושאים מתקדמים בשפת C\HW5-binary tree\TreePrint.lib" />
+    <Library Include="TreePrint.lib">
+      <Filter>Source Files</Filter>
+    </Library>
   </ItemGroup>
 </Project>

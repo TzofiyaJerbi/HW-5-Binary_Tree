@@ -25,46 +25,56 @@ TreeNode* createNode()
 	tree->right = NULL;
 	return tree;
 }
-TreeNode* insert(TreeNode* root, TreeNode* newNode)
-{
-	
-	TreeNode* headt = root;
-	if (headt == NULL)
-	{
-		//root = newNode;
-		return root;
-	}
-		
-	if (newNode->element <= headt->element)
-		if (headt->left == NULL)//?
-		{
-			//headt->left = newNode;
-			return headt->left;
-		}
-			
-		else
-			insert(headt->left, newNode);
 
-	if (newNode->element > headt->element) //right subtree (>)
-		if (headt->right == NULL)
+
+TreeNode* insert(TreeNode* root, TreeNode* newNode) //נותן לי כתובת מה צריך לשבת העלה החדש, מקבל עץ ועלה לחיפוש מקומו
+{
+
+	//TreeNode* headt = root;// יכול להיות מחוץ לפונקציה
+	//if (root == NULL)
+	//{
+	//	//root = newNode;
+	//	return &root;
+	/*}*/
+
+	if (newNode->element <= root->element)
+		if (root->left == NULL)//?
 		{
-			//headt->right = newNode;
-			return headt->right;
+			root->left = newNode;
+			return root;
 		}
-		
-			else
-		
-				insert(headt->right, newNode);
-	
+
+		else
+			return( insert(root->left, newNode));
+
+	if (newNode->element > root->element) //right subtree (>)
+		if (root->right == NULL)
+		{
+			root->right = newNode;
+			return root;
+		}
+
+		else
+
+			return( insert(root->right, newNode));
+
 }
 
 void insertBST(BST* bst, int value)// נדרש לבדוק האם עובד
 {
-	TreeNode* leev=createNode();
-	BST* headt = bst;
+	TreeNode* leev = createNode();
+	BST* headt = bst;// לשמור ראש העץ
 	leev->element = value;
-	TreeNode* temp=insert(headt->root, leev); //לאן
-	leev = temp;
+	if (headt->root == NULL)
+	{
+		headt->root = leev;
+	}
+	else
+	{
+	TreeNode* when = insert(headt->root, leev); //לאן
+	//when->left = leev;
+	}
 	
-	
+
+
 }
