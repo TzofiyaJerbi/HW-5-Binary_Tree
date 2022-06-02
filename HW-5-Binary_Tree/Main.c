@@ -11,7 +11,7 @@ void main()
 	
 	BST NewTree;
 	initBST(&NewTree);
-	int x = 3;
+	int x =20;
 	while (x)
 	{
 
@@ -20,7 +20,8 @@ void main()
 		insertBST(&NewTree, v);
 		x--;
 	}
+	print_ascii_tree(NewTree.root);
 	printTreeInorder(&NewTree);
 	destroyBST(&NewTree);
-	int f = 4;
+	int f = 4;// בשביל ברייק פויינט
 }
