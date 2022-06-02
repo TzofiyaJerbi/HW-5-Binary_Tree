@@ -9,11 +9,8 @@ void main()
 	printf("Ensert Value to tree\n");
 	scanf("%d", &v);
 	BST NewTree;
-	TreeNode* node=createNode();
 	initBST(&NewTree);
 
-	insertBST(&NewTree, v);
-	insert(NewTree.root, node);
 	while (1)
 	{
 
